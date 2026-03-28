@@ -1,0 +1,46 @@
+# BELAJAR GOLANG
+## Pudin Saepudin
+
+Isstall Golang
+Link : https://go.dev/doc/install
+
+Editor : Goland
+Link : https://www.jetbrains.com/go/download/?section=windows
+
+Buat folder : BelajarGo
+Masuk ke folder BelajarGo.
+
+Inisiasi Module
+> go mod init github.com/pudintea/go-restapi-fiber
+
+Mysql Gorm
+> go get gorm.io/gorm gorm.io/driver/mysql
+
+Dependencies
+=============
+go get github.com/gofiber/fiber/v3
+go get github.com/gofiber/jwt/v3
+go get github.com/joho/godotenv
+go get gorm.io/gorm
+go get gorm.io/driver/mysql
+go get github.com/golang-jwt/jwt/v5
+go get golang.org/x/crypto/bcrypt
+go get github.com/go-playground/validator/v10
+go get github.com/gofiber/swagger
+
+
+REST API Menggunakan FIBER
+Link : https://gofiber.io/
+Link Doc : https://docs.gofiber.io/
+
+Install Fiber
+> go get github.com/gofiber/fiber/v3
+
+Install Goqu
+Link : https://github.com/doug-martin/goqu
+Link : https://pkg.go.dev/github.com/doug-martin/goqu
+> go get -u github.com/doug-martin/goqu/v9
+
+
+
+========== PUDIN SAEPUIDN / ITALAZHAR.COM =====
