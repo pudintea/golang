@@ -10,6 +10,12 @@ Link : https://www.jetbrains.com/go/download/?section=windows
 Buat folder : BelajarGo
 Masuk ke folder BelajarGo.
 
+Setup awal project Go (Windows)
+Buka terminal:
+> mkdir go-auth
+> cd go-auth
+> go mod init github.com/pudintea/go-auth
+
 Inisiasi Module
 > go mod init github.com/pudintea/go-restapi-fiber
 
