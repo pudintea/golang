@@ -1,0 +1,6 @@
+
+> go mod edit -module github.com/pudintea/go-auth
+
+
+
+==== PUDIN ====
