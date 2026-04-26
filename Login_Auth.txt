@@ -1,0 +1,10 @@
+Setup awal project Go (Windows)
+Buka terminal:
+> mkdir go-auth
+> cd go-auth
+> go mod init github.com/pudintea/go-auth
+
+
+
+
+======= Pudin : italazhar.com =====
