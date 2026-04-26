@@ -1,0 +1,31 @@
+> go install github.com/air-verse/air@latest
+> air init
+
+Edit : .air.toml
+ganti semua pake ini :
+----
+root = "."
+
+[build]
+cmd = "go build -o tmp/main.exe cmd/main.go"
+bin = "tmp/main.exe"
+include_ext = ["go", "html"]
+exclude_dir = ["tmp", "vendor"]
+
+[log]
+time = true
+
+[watcher]
+watch_dir = "."
+---
+Untuk Menjalankan :
+> air 
+
+
+
+✔ auto reload
+✔ cepat develop
+❌ tidak untuk production
+
+
+===== PUDIN : italazhar.com =====
