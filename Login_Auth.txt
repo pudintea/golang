@@ -1,8 +1,67 @@
 Setup awal project Go (Windows)
+===============================
 Buka terminal:
 > mkdir go-auth
 > cd go-auth
 > go mod init github.com/pudintea/go-auth
+
+
+Install dependency yang kita butuhkan:
+======================================
+> go get github.com/gin-gonic/gin
+> go get gorm.io/gorm
+> go get gorm.io/driver/mysql
+> go get golang.org/x/crypto/bcrypt
+> go get github.com/golang-jwt/jwt/v5
+
+
+Struktur folder (IMPORTANT untuk production)
+=============================================
+Ini struktur yang akan kita pakai:
+
+go-auth/
+│
+├── cmd/
+│   └── main.go
+│
+├── config/
+│   └── db.go
+│
+├── controllers/
+│   └── auth_controller.go
+│
+├── middlewares/
+│   └── auth_middleware.go
+│
+├── models/
+│   └── user.go
+│
+├── routes/
+│   └── routes.go
+│
+├── services/
+│   └── auth_service.go
+│
+├── utils/
+│   └── jwt.go
+│
+├── web/
+│   ├── templates/
+│   └── static/
+│       └── css/
+│
+└── .env
+
+
+
+
+
+
+
+
+
+
+
 
 
 
