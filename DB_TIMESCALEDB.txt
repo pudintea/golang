@@ -1,0 +1,99 @@
+> nano docker-compose.yml
+services:
+  app:
+    build: .
+    container_name: go-monitoring-app
+    ports:
+      - "127.0.0.1:8084:8084"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=monitoring
+
+  db:
+    image: timescale/timescaledb:latest-pg15
+    container_name: timescaledb
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: monitoring
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - timescale_data:/var/lib/postgresql/data
+
+volumes:
+  timescale_data:
+
+
+JALANKAN
+> docker compose up -d
+
+MASUK KE DATABASE
+> docker exec -it timescaledb psql -U postgres -d monitoring
+
+BUAT TABLE METRICS
+CREATE TABLE metrics (
+    time TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    cpu DOUBLE PRECISION,
+    ram DOUBLE PRECISION,
+    disk DOUBLE PRECISION,
+    net_in DOUBLE PRECISION,
+    net_out DOUBLE PRECISION
+);
+
+AKTIFKAN TIMESCALE (WAJIB)
+> CREATE EXTENSION IF NOT EXISTS timescaledb;
+
+UBAH JADI HYPERTABLE
+> SELECT create_hypertable('metrics', 'time');
+
+TEST INSERT
+INSERT INTO metrics (cpu, ram, disk, net_in, net_out)
+VALUES (10.5, 20.3, 50.1, 1000, 500);
+
+TEST QUERY
+SELECT * FROM metrics ORDER BY time DESC LIMIT 5;
+
+CONNECT KE GO
+Install driver:
+> go get github.com/lib/pq
+
+Contoh koneksi di Go:
+
+package database
+import (
+	"database/sql"
+	"fmt"
+	"os"
+
+	_ "github.com/lib/pq"
+)
+
+var DB *sql.DB
+
+func InitDB() {
+	connStr := fmt.Sprintf(
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		os.Getenv("DB_HOST"),
+		os.Getenv("DB_PORT"),
+		os.Getenv("DB_USER"),
+		os.Getenv("DB_PASSWORD"),
+		os.Getenv("DB_NAME"),
+	)
+
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		panic(err)
+	}
+
+	DB = db
+}
+
+
+========== PUDIN, italazhar.com ============
