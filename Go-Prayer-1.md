@@ -34,12 +34,9 @@ mkdir go-auth
 cd go-auth
 ```
 ```
-go mod init github.com/pudinazhar/go-auth
+go mod init github.com/pudinazhar/go-prayer
 ```
-Inisiasi Module
-```
-go mod init github.com/pudintea/go-restapi-fiber
-```
+
 Lanjut buka pake VS Code.
 
 
