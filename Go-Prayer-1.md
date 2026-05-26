@@ -26,6 +26,22 @@ go-prayer/
 ```
 
 ---
+## Buat Folder
+```
+mkdir go-auth
+```
+```
+cd go-auth
+```
+```
+go mod init github.com/pudinazhar/go-auth
+```
+Inisiasi Module
+```
+go mod init github.com/pudintea/go-restapi-fiber
+```
+Lanjut buka pake VS Code.
+
 
 # `go.mod`
 
