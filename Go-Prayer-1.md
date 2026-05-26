@@ -30,7 +30,7 @@ go-prayer/
 # `go.mod`
 
 ```go id="bnvm1e"
-module github.com/yourusername/go-prayer
+module github.com/pudinazhar/go-prayer
 
 go 1.24
 ```
@@ -264,7 +264,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/yourusername/go-prayer/prayer"
+	"github.com/pudinazhar/go-prayer/prayer"
 )
 
 func TestPrayerSchedule(t *testing.T) {
@@ -301,7 +301,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/yourusername/go-prayer/prayer"
+	"github.com/pudinazhar/go-prayer/prayer"
 )
 
 func main() {
