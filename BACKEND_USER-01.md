@@ -761,6 +761,8 @@ Lalu menambahkan:
 * Pagination
 * Dependency Injection
 * Environment Config Struct
+
+## Pudin Saepudin
 * Transaction Management
 * Unit Testing
 
