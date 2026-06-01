@@ -4,7 +4,34 @@ Bagus. Kalau tujuanmu belajar untuk project yang nantinya bisa berkembang menjad
 Struktur ini masih cukup mudah dipahami pemula, tetapi sudah mendekati pola yang sering dipakai di perusahaan.
 
 ---
+## REST API User sederhana dengan:
+- Framework: Gin
+- Database: MySQL
+- ORM: GORM
+- Validation: go-playground/validator
+- Password Hash: bcrypt
+- Architecture: Feature-Based / Modular
 
+## Inisialisasi Project
+
+Buat folder:
+```
+mkdir go-api-user
+cd go-api-user
+```
+Inisialisasi module:
+```
+go mod init go-api-user
+```
+Install dependency:
+```
+go get github.com/gin-gonic/gin
+go get gorm.io/gorm
+go get gorm.io/driver/mysql
+go get github.com/joho/godotenv
+go get golang.org/x/crypto/bcrypt
+go get github.com/go-playground/validator/v10
+```
 ## Konsep Architecture
 
 Setiap fitur berdiri sendiri di dalam folder `modules`.
@@ -98,6 +125,14 @@ go-api-user/
 ```
 
 ---
+## Target endpoint:
+```
+GET    /users
+GET    /users/:id
+POST   /users
+PUT    /users/:id
+DELETE /users/:id
+```
 
 ## Folder Config
 
