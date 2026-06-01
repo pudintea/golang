@@ -761,9 +761,9 @@ Lalu menambahkan:
 * Pagination
 * Dependency Injection
 * Environment Config Struct
-
-## Pudin Saepudin
 * Transaction Management
 * Unit Testing
 
 Itu sudah sangat dekat dengan struktur backend Go yang umum dipakai di startup maupun perusahaan skala menengah.
+
+## By Pudin Saepudin
